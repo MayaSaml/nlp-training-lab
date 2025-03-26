@@ -46,7 +46,7 @@ This notebook demonstrates how to build and train simple RNN-based models for th
 
 ---
 
-## 🚀 How to Use
+## How to Use
 You can run the `.ipynb` notebook in:
 - Jupyter Notebook or JupyterLab
 - Google Colab
