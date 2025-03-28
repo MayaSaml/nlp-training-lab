@@ -11,7 +11,8 @@ Each notebook is written with clarity and structure, meant to balance both pract
 | Notebook                         | Description                                                                 |
 |----------------------------------|-----------------------------------------------------------------------------|
 | `01_pytorch_crashcourse.ipynb`  | A beginner-friendly crash course in PyTorch, covering tensors, gradients, and simple models (including a custom `SimpleNet`) |
-| `rnn_toy_examples.ipynb`        | Toy RNN-based models for 3 NLP tasks (language modeling, tagging, classification) |
+| `02_rnn_toy_examples.ipynb`      | Toy RNN-based models for 3 NLP tasks (language modeling, tagging, classification) |
+| `03_multihead_attention_toy.ipynb`      | Toy sentence example to showcase multihead self-attention tensor calculations  |
 | *More coming soon*              | Transformers, Attention, LLM Fine-Tuning, RAG, and more |
 
 ---
