@@ -32,3 +32,9 @@ The final output is a matrix of shape `(3, 512)`, representing the attention-enh
 - Each head uses its own random `W_Q`, `W_K`, and `W_V` for clarity
 - In real models, these would be trainable parameters shared across batches
 
+## 📚 Reference
+
+Inspired by the visual explanation in  
+**[The Illustrated Transformer by Jay Alammar](https://jalammar.github.io/illustrated-transformer/)**
+
+
