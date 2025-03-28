@@ -1,4 +1,4 @@
-## File: `02_rnn_toy_examples.ipynb`
+## File: `rnn_toy_examples.ipynb`
 
 This notebook demonstrates how to build and train simple RNN-based models for three common NLP tasks:
 
