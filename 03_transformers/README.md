@@ -8,7 +8,7 @@ Each notebook focuses on one core idea — with real shapes, clear logic, and us
 
 ## Notebook Overview
 
-### `01_multihead_attention.ipynb`  
+### `01_self_attention_no_pe.ipynb`  
 Simulates multi-head self-attention using real Transformer dimensions (`d_model = 512`, `num_heads = 8`).  
 You’ll see how Q, K, V are created, how attention scores are computed, and how outputs from all heads are combined.
 
@@ -16,7 +16,7 @@ You’ll see how Q, K, V are created, how attention scores are computed, and how
 
 ---
 
-### `02_tensor_indexing_and_positional_encoding.ipynb`  
+### `02_tensor_indexing_and_pe.ipynb`  
 Covers essential PyTorch tricks (indexing, broadcasting, squeeze/unsqueeze).  
 Then explains how **sin/cos positional encoding** works with full math and clear plots.
 
@@ -24,7 +24,7 @@ Then explains how **sin/cos positional encoding** works with full math and clear
 
 ---
 
-### `03_attention_with_positional_encoding.ipynb`
+### `03_self_attention_with_pe.ipynb`
 Same as the first notebook, but this time with **positional encoding added** — just like in the real Transformer encoder.
 
 ---
