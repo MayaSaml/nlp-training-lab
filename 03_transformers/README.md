@@ -1,40 +1,34 @@
-# 🧠 Multi-Head Self-Attention (Toy Example)
+# Transformers
 
-This notebook demonstrates how **multi-head self-attention** works using a minimal PyTorch implementation — with real Transformer dimensions:
+This folder contains clean and minimal PyTorch notebooks to help understand how Transformers work, step by step.
 
-- `d_model = 512`
-- `num_heads = 8`
-- `d_k = 64`
-
-We simulate attention over the sentence **"I understand this"** using randomly initialized token embeddings.
+Each notebook focuses on one core idea — with real shapes, clear logic, and useful visualizations.
 
 ---
 
-## 🔍 What Happens Here
+## Notebook Overview
 
-- Project input embeddings into Q, K, V for each head
-- Compute scaled dot-product attention per head
-- Concatenate all 8 attention outputs (shape: `3 × 512`)
-- Apply final linear projection (`W_O`)
+### `01_multihead_attention_toy.ipynb`  
+Simulates multi-head self-attention using real Transformer dimensions (`d_model = 512`, `num_heads = 8`).  
+You’ll see how Q, K, V are created, how attention scores are computed, and how outputs from all heads are combined.
 
-This matches the output of the Multi-Head Attention block in the original Transformer encoder — ready to be passed to LayerNorm and the feedforward layer.
-
----
-
-## 📎 Output
-
-The final output is a matrix of shape `(3, 512)`, representing the attention-enhanced vector for each input token.
+> No positional encoding yet — just pure attention logic.
 
 ---
 
-## 🛠 Notes
+### `02_indexing_and_positional_encoding.ipynb`  
+Covers essential PyTorch tricks (indexing, broadcasting, squeeze/unsqueeze).  
+Then explains how **sin/cos positional encoding** works with full math and clear plots.
 
-- Each head uses its own random `W_Q`, `W_K`, and `W_V` for clarity
-- In real models, these would be trainable parameters shared across batches
+> Helpful for understanding how input embeddings are enriched before attention.
 
-## 📚 Reference
+---
 
-Inspired by the visual explanation in  
-**[The Illustrated Transformer by Jay Alammar](https://jalammar.github.io/illustrated-transformer/)**
+### `03_attention_with_positional_encoding.ipynb`
+Same as the first notebook, but this time with **positional encoding added** — just like in the real Transformer encoder.
 
+---
 
+## Reference
+
+- [The Illustrated Transformer – Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
