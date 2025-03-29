@@ -1,5 +1,5 @@
 # RNN - Recurrent Neural Networks with PyTorch 
-### File: `rnn_toy_examples.ipynb`
+### File: `01_rnn_toy_examples.ipynb`
 This notebook demonstrates how to build and train simple RNN-based models for three common NLP tasks:
 
 1️. Language Modeling
