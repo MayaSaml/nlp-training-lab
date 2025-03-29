@@ -24,8 +24,11 @@ Then explains how **sin/cos positional encoding** works with full math and clear
 
 ---
 
-### `03_self_attention_with_pe.ipynb`
-Same as the first notebook, but this time with **positional encoding added** — just like in the real Transformer encoder.
+### `03_encoder_block.ipynb'  
+Simulates a complete Transformer **encoder block** — from positional encoding through self-attention and feedforward layers.  
+Includes residual connections and LayerNorm.
+Output is a (3, 512) matrix — contextualized token representations after one encoder pass.
+
 
 ---
 
