@@ -8,27 +8,18 @@ Each notebook focuses on one core idea — with real shapes, clear logic, and us
 
 ## Notebook Overview
 
-### `01_self_attention_no_pe.ipynb`  
-Simulates multi-head self-attention using real Transformer dimensions (`d_model = 512`, `num_heads = 8`).  
-You’ll see how Q, K, V are created, how attention scores are computed, and how outputs from all heads are combined.
+### 01_tensor_indexing_and_pe.ipynb  
+Explains PyTorch slicing, indexing, broadcasting, and squeeze/unsqueeze.  
+Includes math + plots for sinusoidal positional encodings.  
+Foundation for understanding how input tokens get position-aware vectors.
 
-> No positional encoding yet — just pure attention logic.
+### 02_self_attention_with_pe.ipynb  
+Simulates multi-head self-attention with positional encoding.  
+You’ll see how Q, K, V are created, attention weights calculated, and multiple heads combined.
 
----
-
-### `02_tensor_indexing_and_pe.ipynb`  
-Covers essential PyTorch tricks (indexing, broadcasting, squeeze/unsqueeze).  
-Then explains how **sin/cos positional encoding** works with full math and clear plots.
-
-> Helpful for understanding how input embeddings are enriched before attention.
-
----
-
-### `03_encoder_block.ipynb'  
-Simulates a complete Transformer **encoder block** — from positional encoding through self-attention and feedforward layers.  
-Includes residual connections and LayerNorm.
-Output is a (3, 512) matrix — contextualized token representations after one encoder pass.
-
+### 03_encoder_block.ipynb  
+Implements a full Transformer encoder block: self-attention → residual + norm → feedforward → residual + norm.  
+Result: contextualized (3, 512) token representations.
 
 ---
 
