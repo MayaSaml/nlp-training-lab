@@ -8,7 +8,7 @@ Each notebook focuses on one core idea — with real shapes, clear logic, and us
 
 ## Notebook Overview
 
-### `01_multihead_attention_toy.ipynb`  
+### `01_multihead_attention.ipynb`  
 Simulates multi-head self-attention using real Transformer dimensions (`d_model = 512`, `num_heads = 8`).  
 You’ll see how Q, K, V are created, how attention scores are computed, and how outputs from all heads are combined.
 
