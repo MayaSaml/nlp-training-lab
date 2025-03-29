@@ -16,7 +16,7 @@ You’ll see how Q, K, V are created, how attention scores are computed, and how
 
 ---
 
-### `02_indexing_and_positional_encoding.ipynb`  
+### `02_tensor_indexing_and_positional_encoding.ipynb`  
 Covers essential PyTorch tricks (indexing, broadcasting, squeeze/unsqueeze).  
 Then explains how **sin/cos positional encoding** works with full math and clear plots.
 
