@@ -12,7 +12,7 @@ Each notebook is written with clarity and structure, meant to balance both pract
 |----------------------------------|-----------------------------------------------------------------------------|
 | `01_pytorch_crashcourse`  | A beginner-friendly crash course in PyTorch, covering tensors, gradients, and simple models (including a custom `SimpleNet`) |
 | `02_rnn`      | Toy RNN-based models for 3 NLP tasks (language modeling, tagging, classification) |
-| `03_transformers`      | Toy sentence example to showcase multihead self-attention tensor calculations  |
+| `03_transformers`      | Examples to showcase multihead self-attention tensor calculations with positional encoding  |
 | *More coming soon*              | Transformers, Attention, LLM Fine-Tuning, RAG, and more |
 
 ---
