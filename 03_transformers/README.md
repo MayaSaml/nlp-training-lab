@@ -21,6 +21,9 @@ You’ll see how Q, K, V are created, attention weights calculated, and multiple
 Implements a full Transformer encoder block: self-attention → residual + norm → feedforward → residual + norm.  
 Result: contextualized (3, 512) token representations.
 
+### 04_encoder_stack.ipynb
+Implements a full stack of **8 Transformer encoder blocks** using PyTorch.
+
 ---
 
 ## Reference
