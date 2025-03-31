@@ -27,6 +27,10 @@ Implements a full stack of **8 Transformer encoder blocks** using PyTorch.
 ### 05_decoder_stack.ipynb
 Implements a full stack of **8 Transformer decoder blocks** using PyTorch.
 
+### 06_transformer_full.ipynb
+Creates classes Transformer and TransformerWithEmbeddings incorporating previously created classes PositionalEncoding, TransformerEncoder, TransformerDecoder.
+
+
 ---
 
 ## Reference
