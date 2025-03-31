@@ -24,6 +24,9 @@ Result: contextualized (3, 512) token representations.
 ### 04_encoder_stack.ipynb
 Implements a full stack of **8 Transformer encoder blocks** using PyTorch.
 
+### 05_decoder_stack.ipynb
+Implements a full stack of **8 Transformer decoder blocks** using PyTorch.
+
 ---
 
 ## Reference
