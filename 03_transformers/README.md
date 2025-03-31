@@ -28,8 +28,10 @@ Implements a full stack of **8 Transformer encoder blocks** using PyTorch.
 Implements a full stack of **8 Transformer decoder blocks** using PyTorch.
 
 ### 06_transformer_full.ipynb
-Combines all: creates classes Transformer and TransformerWithEmbeddings incorporating previously created classes PositionalEncoding, TransformerEncoder, TransformerDecoder.
+Creates classes Transformer and TransformerWithEmbeddings incorporating previously created classes PositionalEncoding, TransformerEncoder, TransformerDecoder.
 
+### 07_transformer_from_scratch.py
+Combines all modularized codes, has all classes one-by-one: PositionalEncoding, EncoderBlock, TransformerEncoder, DecoderBlock, TransformerDecoder, Transformer and TransformerWithEmbeddings. From now on, let's import from this file all these classes for later usage.
 
 ---
 
