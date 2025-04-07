@@ -13,7 +13,7 @@ Topics covered:
 - Document Q&A with retrieval-augmented generation (RAG)
 - Systematic comparison of open-source LLMs for reasoning tasks
 
-⚙Frameworks:
+Frameworks:
 - OpenAI API, HuggingFace Transformers, LangChain, FAISS, PyTorch
 
 Educational Intent:
