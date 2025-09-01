@@ -113,36 +113,47 @@ training_arguments = SFTConfig(
 )
 ```
 
-### Technical Breakdown
-1) **Core**  
-- `output_dir="output"`: checkpoints, logs, final adapter weights.
+### Technical Breakdown (SFTConfig)
 
-2) **Batching & memory**  
-- `per_device_train_batch_size=2`, `per_device_eval_batch_size=2`  
-- `max_length=512`  
-- `gradient_accumulation_steps=4` → effective batch size 8.
+**SFTConfig** is the TRL configuration object for supervised fine-tuning.  
+It controls training, evaluation, checkpointing, and logging.
 
-3) **Optimization**  
-- `optim="paged_adamw_32bit"`: memory‑efficient AdamW via `bitsandbytes`.  
-- `learning_rate=2e-4`: common for LoRA; cosine decay via `lr_scheduler_type="cosine"`.  
-- `num_train_epochs=3`.
+### 1) Core
+- `output_dir="output"` → directory for model checkpoints, logs, and final weights.
 
-4) **Eval & logging**  
-- `eval_strategy="steps"`, `eval_steps=25`.  
-- `logging_steps=10`.
+### 2) Batching & Training Stability
+- `per_device_train_batch_size=2` / `per_device_eval_batch_size=2` → keep batch size small to fit on 16GB GPUs (e.g., T4).  
+- `max_length=512` → truncate longer conversations; balances memory vs. context.  
+- `gradient_accumulation_steps=4` → simulate effective batch size of 8, improving gradient stability without extra GPU memory.
 
-5) **Checkpointing**  
-- `save_strategy="steps"`, `save_steps=50`, `save_total_limit=2`.  
-- `load_best_model_at_end=True`, `metric_for_best_model="eval_loss"`, `greater_is_better=False`.
+### 3) Optimization
+- `optim="paged_adamw_32bit"` → BitsAndBytes optimizer, pages optimizer states between GPU/CPU to avoid OOM.  
+- `learning_rate=2e-4` → higher than full fine-tuning, works well for LoRA adapters.  
+- `lr_scheduler_type="cosine"` → smooth cosine decay instead of abrupt linear.  
+- `num_train_epochs=3` → 3 full dataset passes.
 
-6) **Performance**  
-- `fp16=True`, `gradient_checkpointing=True`.
+### 4) Evaluation & Logging
+- `eval_strategy="steps"`, `eval_steps=25` → run validation every 25 steps.  
+- `logging_steps=10` → log training loss and metrics often.
 
-7) **Task‑specific**  
-- `chat_template_path="TinyLlama/TinyLlama-1.1B-Chat-v1.0"`, `eos_token="</s>"`.
+### 5) Checkpointing & Model Selection
+- `save_strategy="steps"`, `save_steps=50` → checkpoint every 50 steps.  
+- `save_total_limit=2` → keep only 2 recent checkpoints (disk-friendly).  
+- `load_best_model_at_end=True` → reload checkpoint with best eval metric.  
+- `metric_for_best_model="eval_loss"`, `greater_is_better=False` → lowest loss = best model.
 
-8) **Reporting**  
-- `report_to="wandb"`, `run_name="tinyllama-qlora-with-eval"`.
+### 6) Performance & Memory
+- `fp16=True` → mixed-precision for faster training and ~50% less memory use.  
+- `gradient_checkpointing=True` → recompute activations during backward pass; saves GPU RAM at small cost in speed.
+
+### 7) Task-Specific
+- `chat_template_path="TinyLlama/TinyLlama-1.1B-Chat-v1.0"` → auto-formats role-based messages into model-ready strings.  
+- `eos_token="</s>"` → ensures conversations terminate cleanly.
+
+### 8) Monitoring & Reporting
+- `report_to="wandb"` → log metrics to Weights & Biases for visualization.  
+- `run_name="tinyllama-qlora-with-eval"` → experiment name for tracking multiple runs.
+
 
 ```python
 trainer = SFTTrainer(
