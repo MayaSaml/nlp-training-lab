@@ -252,5 +252,3 @@ merged_model = model.merge_and_unload()
 
 ---
 
-**End of document.**
-
